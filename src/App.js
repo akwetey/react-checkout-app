@@ -25,9 +25,11 @@ class App extends Component {
         selectedCoupon: "0",
       },
       products,
+      subTotal: 0,
     };
     this.addToCart = this.addToCart.bind(this);
     this.removeFromCart = this.removeFromCart.bind(this);
+    this.calculateSubTotal = this.calculateSubTotal.bind(this);
   }
 
   addToCart(e, index) {
@@ -45,6 +47,7 @@ class App extends Component {
       products,
       cart,
     });
+    this.calculateSubTotal();
   }
 
   removeFromCart(e, index) {
@@ -60,6 +63,16 @@ class App extends Component {
       cart,
       products,
     });
+    this.calculateSubTotal();
+  }
+
+  calculateSubTotal() {
+    let price = this.state.cart.items.reduce((acc, val) => {
+      return acc + val.price;
+    }, 0);
+    this.setState({
+      subTotal: price,
+    });
   }
 
   render() {
@@ -72,7 +85,10 @@ class App extends Component {
             addToCart={this.addToCart}
             removeFromCart={this.removeFromCart}
           />
-          <Cart cart={this.state.cart} />
+          <Cart
+            cart={this.state.cart}
+            calculateSubTotal={this.state.subTotal}
+          />
         </div>
       </div>
     );

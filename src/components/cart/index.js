@@ -6,7 +6,6 @@ export default class Cart extends Component {
     super(props);
     this.state = {
       discount: 0,
-      items: this.props.cart.items,
     };
   }
 
@@ -76,11 +75,7 @@ export default class Cart extends Component {
           <li className="layout-row justify-content-between py-12 caption font-weight-light">
             <span>Subtotal</span>
             <span data-testid="cart-subtotal">
-              $
-              {this.props.cart.items.length &&
-                this.props.cart.items.reduce((acc, val) => {
-                  return acc + val.price;
-                }, 0) - this.state.discount}
+              ${this.props.calculateSubTotal}
             </span>
           </li>
           <li className="layout-row justify-content-between py-12 caption font-weight-light">
@@ -93,10 +88,8 @@ export default class Cart extends Component {
             <span>Total</span>
             <span data-testid="cart-total">
               $
-              {this.props.cart.items.length &&
-                this.props.cart.items.reduce((acc, val) => {
-                  return acc + val.price;
-                }, 0) - this.state.discount}
+              {this.props.calculateSubTotal &&
+                this.props.calculateSubTotal - this.state.discount}
             </span>
           </li>
         </ul>

@@ -4,7 +4,6 @@
 
 - React Version: 16.13.1
 - Node Version: ^12.18.3
-- Default Port: 8000
 
 ## Project Specifications
 
