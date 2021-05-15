@@ -4,7 +4,7 @@ import ProductList from "./components/product-list";
 import Cart from "./components/cart";
 import "h8k-components";
 
-const title = "HackerShop";
+const title = "AkweteyShop";
 
 class App extends Component {
   constructor() {
@@ -13,6 +13,7 @@ class App extends Component {
       product.id = index + 1;
       product.image = `/images/items/${product.name.toLocaleLowerCase()}.png`;
       product.cartQuantity = 0;
+      product.showBtn = false;
       return product;
     });
     this.state = {
@@ -32,6 +33,7 @@ class App extends Component {
   addToCart(e, index) {
     const products = this.state.products;
     products[index].cartQuantity = 1;
+    products[index].showBtn = true;
     let cart = { ...this.state.cart };
     cart.items.push({
       id: products[index].id,
@@ -48,6 +50,7 @@ class App extends Component {
   removeFromCart(e, index) {
     const products = this.state.products;
     products[index].cartQuantity = 0;
+    products[index].showBtn = false;
     let cart = { ...this.state.cart };
     let cartIndex = this.state.cart.items.findIndex(
       (item) => item.id === products[index].id

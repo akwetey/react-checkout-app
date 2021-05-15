@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import "./index.css";
 
 export default class Cart extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       discount: 0,
+      items: this.props.cart.items,
     };
   }
 
@@ -76,24 +77,26 @@ export default class Cart extends Component {
             <span>Subtotal</span>
             <span data-testid="cart-subtotal">
               $
-              {this.props.cart.items.reduce((acc, val) => {
-                return acc + val.price;
-              }, 0) - this.state.discount}
+              {this.props.cart.items.length &&
+                this.props.cart.items.reduce((acc, val) => {
+                  return acc + val.price;
+                }, 0) - this.state.discount}
             </span>
           </li>
           <li className="layout-row justify-content-between py-12 caption font-weight-light">
             <span>Discount (-)</span>
             <span className="discount" data-testid="cart-discount">
-              ${this.discount}
+              ${this.state.discount}
             </span>
           </li>
           <li className="layout-row justify-content-between py-12 font-weight-bold">
             <span>Total</span>
             <span data-testid="cart-total">
-              ${" "}
-              {this.props.cart.items.reduce((acc, val) => {
-                return acc + val.price;
-              }, 0) - this.state.discount}
+              $
+              {this.props.cart.items.length &&
+                this.props.cart.items.reduce((acc, val) => {
+                  return acc + val.price;
+                }, 0) - this.state.discount}
             </span>
           </li>
         </ul>

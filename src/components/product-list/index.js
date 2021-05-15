@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./index.css";
 
 export default class ProductList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -27,21 +27,23 @@ export default class ProductList extends Component {
                   <p className="ma-0 mt-8 text-center">${product.price}</p>
                 </div>
                 <div className="card-actions justify-content-center pa-4">
-                  <button
-                    className="x-small outlined"
-                    data-testid="btn-item-add"
-                    onClick={(e) => this.props.addToCart(e, i)}
-                  >
-                    Add To Cart
-                  </button>
-
-                  <button
-                    className="x-small danger"
-                    data-testid="btn-item-remove"
-                    onClick={(e) => this.props.removeFromCart(e, i)}
-                  >
-                    Remove
-                  </button>
+                  {product.showBtn ? (
+                    <button
+                      className="x-small danger"
+                      data-testid="btn-item-remove"
+                      onClick={(e) => this.props.removeFromCart(e, i)}
+                    >
+                      Remove
+                    </button>
+                  ) : (
+                    <button
+                      className="x-small outlined"
+                      data-testid="btn-item-add"
+                      onClick={(e) => this.props.addToCart(e, i)}
+                    >
+                      Add To Cart
+                    </button>
+                  )}
                 </div>
               </div>
             </section>
