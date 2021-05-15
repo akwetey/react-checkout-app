@@ -1,0 +1,33 @@
+table {
+    margin-bottom: 12px;
+}
+
+.coupon-select {
+    height: 32px;
+    width: 112px;
+}
+
+.coupon-select:focus {
+    outline: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+ul.bordered li {
+    border-bottom: 1px solid #eeeeee;
+}
+
+ul.bordered li:last-child {
+    border-bottom: none;
+}
+
+ul.inset li{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+.caption {
+    font-size: 14px;
+}
+
