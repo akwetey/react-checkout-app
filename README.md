@@ -1,4 +1,4 @@
-# React: HackerShop Checkout
+# React: Akwetey Shop Checkout
 
 ## Environment
 
