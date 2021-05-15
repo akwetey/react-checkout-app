@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="5" failures="4" time="26.814">
+  <testsuite name="undefined" errors="0" failures="4" skipped="0" timestamp="2021-05-15T14:43:23" time="14.735" tests="5">
+    <testcase classname=" Should Add item to cart" name=" Should Add item to cart" time="0.102">
+      <failure>Error: expect(received).toBeFalsy()
+
+Received: &lt;button class=&quot;x-small danger&quot; data-testid=&quot;btn-item-remove&quot;&gt;Remove&lt;/button&gt;
+    at Object.&lt;anonymous&gt; (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\src\App.test.js:85:31)
+    at Object.asyncJestTest (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:73:41
+    at processTicksAndRejections (internal/process/task_queues.js:82:5)</failure>
+    </testcase>
+    <testcase classname=" Should Calculate correct price before selecting coupon" name=" Should Calculate correct price before selecting coupon" time="0.088">
+    </testcase>
+    <testcase classname=" Should calculate discounts on selecting a coupon" name=" Should calculate discounts on selecting a coupon" time="0.036">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+Expected: 5
+Received: 0
+    at Object.&lt;anonymous&gt; (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\src\App.test.js:140:34)
+    at Object.asyncJestTest (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:73:41</failure>
+    </testcase>
+    <testcase classname=" Should recalculate prices when item is removed from cart" name=" Should recalculate prices when item is removed from cart" time="0.037">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+Expected: 6
+Received: 0
+    at Object.&lt;anonymous&gt; (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\src\App.test.js:155:34)
+    at Object.asyncJestTest (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:73:41</failure>
+    </testcase>
+    <testcase classname=" Should recalculate prices when coupon is changed" name=" Should recalculate prices when coupon is changed" time="0.026">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+Expected: 6
+Received: 0
+    at Object.&lt;anonymous&gt; (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\src\App.test.js:182:34)
+    at Object.asyncJestTest (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:102:37)
+    at C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:43:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:26:19)
+    at C:\laragon\www\88f9966e-0e98-4794-b518-3a6b74cdd343\node_modules\jest-jasmine2\build\queueRunner.js:73:41</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -4,7 +4,14 @@ import "./index.css";
 export default class Cart extends Component {
   constructor() {
     super();
+    this.state = {
+      discount: 0,
+    };
   }
+
+  myChangeHandler = (event) => {
+    this.setState({ discount: event.target.value });
+  };
 
   render() {
     return (
@@ -53,7 +60,12 @@ export default class Cart extends Component {
         </table>
         <div className="layout-row justify-content-between align-items-center px-8 mx-12">
           <h5>Select Coupon</h5>
-          <select data-testid="cart-coupon" className="coupon-select">
+          <select
+            data-testid="cart-coupon"
+            className="coupon-select"
+            name="discount"
+            onChange={this.myChangeHandler}
+          >
             <option value="0">None</option>
             <option value="10">OFF10</option>
             <option value="20">OFF20</option>
@@ -66,13 +78,13 @@ export default class Cart extends Component {
               $
               {this.props.cart.items.reduce((acc, val) => {
                 return acc + val.price;
-              }, 0)}
+              }, 0) - this.state.discount}
             </span>
           </li>
           <li className="layout-row justify-content-between py-12 caption font-weight-light">
             <span>Discount (-)</span>
             <span className="discount" data-testid="cart-discount">
-              ${this.props.cart.discount}
+              ${this.discount}
             </span>
           </li>
           <li className="layout-row justify-content-between py-12 font-weight-bold">
@@ -81,7 +93,7 @@ export default class Cart extends Component {
               ${" "}
               {this.props.cart.items.reduce((acc, val) => {
                 return acc + val.price;
-              }, 0)}
+              }, 0) - this.state.discount}
             </span>
           </li>
         </ul>
